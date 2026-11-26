@@ -1,0 +1,25 @@
+name: BMS Ticket Watcher
+
+on:
+  schedule:
+    # Runs hourly between 7 AM and 10 PM IST (01:30 to 16:30 UTC)
+    - cron: '30 1-16 * * *'
+  workflow_dispatch: # Allows you to manually trigger a test run anytime from the browser
+
+jobs:
+  check-tickets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Run Ticket Checker
+        run: python check_tickets.py
