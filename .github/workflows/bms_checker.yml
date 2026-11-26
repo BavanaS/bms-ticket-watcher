@@ -2,8 +2,8 @@ name: BMS Ticket Watcher
 
 on:
   schedule:
-     # Runs every hour, 24/7 daily (at minute 15 of every hour)
-    - cron: '15 * * * *'
+     # Runs every 30 minutes, 24/7 daily (:00 and :30)
+    - cron: '*/30 * * * *'
   workflow_dispatch: # Allows you to manually trigger a test run anytime from the browser
 
 jobs:
