@@ -51,8 +51,8 @@ def main():
 
     # 1. Check if the movie is listed
     if (
-        "Avengers: Doomsday" not in page_text
-        and "Avengers Doomsday" not in page_text
+        "Avengers: Doomsday" in page_text
+        and "Avengers Doomsday" in page_text
     ):
       print("Status: 'Avengers: Doomsday' is not listed yet.")
       return
